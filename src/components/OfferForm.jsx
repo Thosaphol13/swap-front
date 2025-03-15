@@ -15,7 +15,7 @@ const OfferForm = ({ productId, fromUserId, toUserId, onClose }) => {
     // ดึงประเภทสินค้า
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('https://swap-back-rh5j.onrender.com/categories');
+        const response = await axios.get('http://localhost:3001/categories');
         setCategories(response.data);
       } catch (error) {
         console.error('Error fetching categories:', error);
@@ -25,7 +25,7 @@ const OfferForm = ({ productId, fromUserId, toUserId, onClose }) => {
     // ดึงข้อเสนอที่เคยส่ง
     const fetchPreviousOffers = async () => {
       try {
-        const response = await axios.get(`https://swap-back-rh5j.onrender.com/offers/sent/${fromUserId}`);
+        const response = await axios.get(`http://localhost:3001/offers/sent/${fromUserId}`);
         setPreviousOffers(response.data);
       } catch (error) {
         console.error('Error fetching previous offers:', error);
@@ -78,7 +78,7 @@ const OfferForm = ({ productId, fromUserId, toUserId, onClose }) => {
   
         // อัปโหลดหลายไฟล์
         const uploadResponse = await axios.post(
-          'https://swap-back-rh5j.onrender.com/offers/upload',
+          'http://localhost:3001/offers/upload',
           formData,
           { headers: { 'Content-Type': 'multipart/form-data' } }
         );
@@ -99,7 +99,7 @@ const OfferForm = ({ productId, fromUserId, toUserId, onClose }) => {
         image: imageUrls, // ส่งหลาย URL
       };
   
-      await axios.post('https://swap-back-rh5j.onrender.com/offers/create', offerData);
+      await axios.post('http://localhost:3001/offers/create', offerData);
       setSuccessMessage('Offer sent successfully!');
       message.success('Offer sent successfully!');
       form.resetFields();

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://swap-back-rh5j.onrender.com';
+const API_BASE_URL = 'http://localhost:3001';
 
 // ฟังก์ชันดึงข้อเสนอที่ได้รับ
 export const fetchReceivedOffers = async (userId) => {

@@ -44,11 +44,11 @@ const [filterByFollow, setFilterByFollow] = useState(false);
     const fetchData = async () => {
       try {
         const [userResponse, productsResponse, followersResponse, SearchProductResponse,categoriesResponse] = await Promise.all([
-          axios.get(`https://swap-back-rh5j.onrender.com/users/${id}`),
-          axios.get('https://swap-back-rh5j.onrender.com/products'),
-          axios.get(`https://swap-back-rh5j.onrender.com/follow/${id}/followers`),
-          axios.get(`https://swap-back-rh5j.onrender.com/products/name/${name}`),
-          axios.get('https://swap-back-rh5j.onrender.com/categories')
+          axios.get(`http://localhost:3001/users/${id}`),
+          axios.get('http://localhost:3001/products'),
+          axios.get(`http://localhost:3001/follow/${id}/followers`),
+          axios.get(`http://localhost:3001/products/name/${name}`),
+          axios.get('http://localhost:3001/categories')
         ]);
         setUser(userResponse.data);
         setIsAdmin(userResponse.data.role === 'admin');
@@ -71,7 +71,7 @@ const [filterByFollow, setFilterByFollow] = useState(false);
   useEffect(() => {
     const fetchFollowedUsers = async () => {
       try {
-        const response = await fetch(`https://swap-back-rh5j.onrender.com/follow/${user.id}/following`);
+        const response = await fetch(`http://localhost:3001/follow/${user.id}/following`);
         const data = await response.json();
         setFollowedUsers(data);
       } catch (error) {
@@ -205,7 +205,7 @@ const [filterByFollow, setFilterByFollow] = useState(false);
           return;
         }
         try {
-          const response = await axios.post(`https://swap-back-rh5j.onrender.com/reports`, {
+          const response = await axios.post(`http://localhost:3001/reports`, {
             productId,  // Include the productId in the request
             userId: user.id,  // Assuming user.id is available in your context or state
             reason,
@@ -231,7 +231,7 @@ const [filterByFollow, setFilterByFollow] = useState(false);
       cancelType: 'danger', 
       onOk: async () => {
         try {
-          await axios.delete(`https://swap-back-rh5j.onrender.com/products/${productId}`);
+          await axios.delete(`http://localhost:3001/products/${productId}`);
           setProducts(products.filter((product) => product.id !== productId));
           setFilteredProducts(filteredProducts.filter((product) => product.id !== productId));
           message.success('Product deleted successfully');

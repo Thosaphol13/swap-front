@@ -39,7 +39,7 @@ const ProfilePage = () => {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await axios.get(`https://swap-back-rh5j.onrender.com/reviews/${id}`);
+        const response = await axios.get(`http://localhost:3001/reviews/${id}`);
         console.log('Full Response:', response.data);
         setReviews(response.data);
         
@@ -59,7 +59,7 @@ const ProfilePage = () => {
     // Fetch user profile and products
     const fetchUser = async () => {
       try {
-        const response = await axios.get(`https://swap-back-rh5j.onrender.com/users/${id}`);
+        const response = await axios.get(`http://localhost:3001/users/${id}`);
         setUser(response.data);
         setEditForm(response.data); // Initialize form with current user data
         console.log('Profile Owner Details:', response.data);
@@ -70,7 +70,7 @@ const ProfilePage = () => {
 
     const fetchUserProducts = async () => {
       try {
-        const response = await axios.get(`https://swap-back-rh5j.onrender.com/products/user/${id}`);
+        const response = await axios.get(`http://localhost:3001/products/user/${id}`);
         setProducts(response.data);
       } catch (error) {
         console.error('Error fetching user products:', error);
@@ -101,7 +101,7 @@ const ProfilePage = () => {
     const checkFollowingStatus = async () => {
       if (currentUserId && id) {
         try {
-          const response = await axios.get(`https://swap-back-rh5j.onrender.com/follow/${currentUserId}/following/${id}`);
+          const response = await axios.get(`http://localhost:3001/follow/${currentUserId}/following/${id}`);
           setIsFollowing(response.data);
         } catch (error) {
           console.error('Error checking follow status:', error);  
@@ -121,7 +121,7 @@ const ProfilePage = () => {
       cancelText: 'ไม่ใช่',
       onOk: async () => {
         try {
-          await axios.post(`https://swap-back-rh5j.onrender.com/follow/${currentUserId}/follow/${id}`);
+          await axios.post(`http://localhost:3001/follow/${currentUserId}/follow/${id}`);
           setIsFollowing(true);
           message.success('Followed successfully');
         } catch (error) {
@@ -141,7 +141,7 @@ const ProfilePage = () => {
       cancelText: 'ไม่ใช่',
       onOk: async () => {
         try {
-          await axios.delete(`https://swap-back-rh5j.onrender.com/follow/${currentUserId}/unfollow/${id}`);
+          await axios.delete(`http://localhost:3001/follow/${currentUserId}/unfollow/${id}`);
           setIsFollowing(false);
           message.success('Unfollowed successfully');
         } catch (error) {
@@ -233,7 +233,7 @@ const ProfilePage = () => {
             }}
             handleSave={async () => {
               try {
-                await axios.patch(`https://swap-back-rh5j.onrender.com/users/${id}`, editForm);
+                await axios.patch(`http://localhost:3001/users/${id}`, editForm);
                 setUser(editForm);
                 setIsEditing(false);
               } catch (error) {

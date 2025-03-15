@@ -80,7 +80,7 @@ const Admin = () => {
     setError("");
     setSuccess("");
     try {
-      await axios.post("https://swap-back-rh5j.onrender.com/categories", { name: values.categoryName });
+      await axios.post("http://localhost:3001/categories", { name: values.categoryName });
       setSuccess("Category added successfully!");
       setCategoryName(""); // Clear input field
     } catch (error) {
