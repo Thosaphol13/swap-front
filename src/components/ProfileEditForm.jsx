@@ -30,7 +30,7 @@ const ProfileEditForm = ({ editForm, handleChange, handleSave, handleEditToggle 
 
     try {
       const response = await axios.post(
-        `http://localhost:3001/users/${editForm.id}/upload-profile-picture`,
+        `https://swap-back-rh5j.onrender.com/users/${editForm.id}/upload-profile-picture`,
         formData,
         {
           headers: { 'Content-Type': 'multipart/form-data' },

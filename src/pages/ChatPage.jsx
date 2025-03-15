@@ -16,7 +16,7 @@ const Chat = ({ fromUserId, toUserId, productId, onClose }) => {
   useEffect(() => {
     const fetchUserDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/users/${toUserId}`);
+        const response = await axios.get(`https://swap-back-rh5j.onrender.com/users/${toUserId}`);
         setUser(response.data);
       } catch (error) {
         console.error('Error fetching user details:', error);
@@ -30,7 +30,7 @@ const Chat = ({ fromUserId, toUserId, productId, onClose }) => {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/chats/getByProductId/${productId}`);
+        const response = await axios.get(`https://swap-back-rh5j.onrender.com/chats/getByProductId/${productId}`);
         setMessages(response.data.map((msg) => ({
           ...msg,
           product: msg.product || null, // Include product details if available
@@ -48,7 +48,7 @@ const Chat = ({ fromUserId, toUserId, productId, onClose }) => {
   const handleSendMessage = async () => {
     if (!newMessage.trim()) return; // Don't send empty messages
     try {
-      const response = await axios.post('http://localhost:3001/chats/create', {
+      const response = await axios.post('https://swap-back-rh5j.onrender.com/chats/create', {
         from_user_id: fromUserId,
         to_user_id: toUserId,
         message: newMessage,
