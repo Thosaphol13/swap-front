@@ -24,7 +24,7 @@ const Register = () => {
     setError(null);
     setSuccess(null);
     try {
-      const response = await axios.post("http://localhost:3001/auth/register", values);
+      const response = await axios.post("https://swap-back-rh5j.onrender.com/auth/register", values);
       setSuccess("Registration successful! You can now log in.");
       setFormData({
         email: "",

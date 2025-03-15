@@ -20,11 +20,11 @@ const Login = () => {
 
   const handleSubmit = async (values) => {
     try {
-      const response = await axios.post('http://localhost:3001/auth/login', values);
+      const response = await axios.post('https://swap-back-rh5j.onrender.com/auth/login', values);
       console.log('Login successful:', response.data);
   
       const { access_token, id } = response.data;
-      const res = await axios.get(`http://localhost:3001/users/${id}`);
+      const res = await axios.get(`https://swap-back-rh5j.onrender.com/users/${id}`);
       const userData = res.data;
       
       setUser(userData);

@@ -25,15 +25,15 @@ const ProductDetail = () => {
   useEffect(() => {
     const fetchProductDetail = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/products/${id}`);
+        const response = await axios.get(`https://swap-back-rh5j.onrender.com/products/${id}`);
         setProduct(response.data);
         if (response.data.user) {
           setUser(response.data.user);
         } else if (response.data.userId) {
-          const userResponse = await axios.get(`http://localhost:3001/users/${response.data.userId}`);
+          const userResponse = await axios.get(`https://swap-back-rh5j.onrender.com/users/${response.data.userId}`);
           setUser(userResponse.data);
         }
-        const commentsResponse = await axios.get(`http://localhost:3001/comments/product?product_id=${id}`);
+        const commentsResponse = await axios.get(`https://swap-back-rh5j.onrender.com/comments/product?product_id=${id}`);
         setComments(commentsResponse.data);
       } catch (error) {
         console.error('Error fetching product details:', error);
@@ -44,7 +44,7 @@ const ProductDetail = () => {
   const handleAddComment = async () => {
     if (!commentText.trim()) return;
     try {
-      const response = await axios.post('http://localhost:3001/comments/create', {
+      const response = await axios.post('https://swap-back-rh5j.onrender.com/comments/create', {
         user_id: userId,
         product_id: id,
         content: commentText,
@@ -59,7 +59,7 @@ const ProductDetail = () => {
     if (!replyText[parentId]?.trim()) return;
     try {
       const response = await axios.post(
-        `http://localhost:3001/comments/reply/${parentId}`,
+        `https://swap-back-rh5j.onrender.com/comments/reply/${parentId}`,
         {
           user_id: userId,
           product_id: id,
@@ -79,7 +79,7 @@ const ProductDetail = () => {
   };
   const handleDelete = async (commentId) => {
     try {
-      await axios.delete(`http://localhost:3001/comments/delete/${commentId}`, {
+      await axios.delete(`https://swap-back-rh5j.onrender.com/comments/delete/${commentId}`, {
         data: { userId },
       });
   
@@ -100,7 +100,7 @@ const ProductDetail = () => {
   };
   const handleSaveEdit = async () => {
     try {
-      const response = await axios.put(`http://localhost:3001/comments/update/${editCommentId}`, {
+      const response = await axios.put(`https://swap-back-rh5j.onrender.com/comments/update/${editCommentId}`, {
         content: editText,
         userId,
       });
