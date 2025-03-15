@@ -1,0 +1,538 @@
+/* Main Page Layout */
+.main-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full viewport height */
+}
+.logout-icon{
+  width: 30px;
+  height: 30px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+
+.search-bar {
+  flex: 1;
+  margin: 0 20px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.category-select {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-left: 20px;
+  background-color: #fff;
+}
+
+.menu-icons {
+  display: flex;
+  align-items: center;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.content {
+  display: flex;
+  flex-grow: 1; /* Ensure content section takes available space */
+  overflow: hidden; /* Prevent content from overflowing */
+}
+/* Products Section */
+.products-section {
+  width: calc(100% - 400px); /* Adjust width to fit sidebar */
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: calc(100vh - 60px); /* Adjust based on header height */
+}
+
+.product-card {
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 16px;
+  margin: 16px 0;
+  background-color: #fff;
+}
+
+.product-name {
+  position: absolute;
+  top: 16px;
+  right: 70px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+}
+
+.product-image {
+  max-width: 100%;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: auto;
+  border-radius: 8px;
+}
+
+.product-actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  
+}
+
+.product-owner {
+  margin-bottom: 8px;
+}
+
+.product-status {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  position: absolute;
+  top: 20px;
+  left: 365px;
+}
+
+.product-status.available {
+  background-color: green;
+}
+
+.product-status.complete {
+  background-color: red;
+}
+
+/* Floating Button */
+.floating-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.floating-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Post Area */
+.post-area {
+  background-color: white;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post-input {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.post-input .profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.post-input input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.action-btn {
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px;
+  background-color: #f0f2f5;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-btn:hover {
+  background-color: #e1e3e6;
+}
+
+/* Followers Section */
+.followers-section {
+  width: 400px; /* Fixed width for sidebar */
+  background-color: #f9f9f9;
+  padding: 20px;
+  overflow-y: auto;
+  max-height: calc(100vh - 60px);
+}
+
+.follower {
+  margin-bottom: 20px;
+}
+
+.owner-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.owner-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.follower-card {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+
+.follower-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.follower-name {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Offer Form */
+.offer-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  z-index: 1000;
+}
+
+.offer-form input,
+.offer-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.offer-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.offer-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Notification */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.notification {
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+.notification-hidden {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+/* Add Product Button */
+.add-product-btn {
+  margin: 20px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.add-product-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .product-card {
+    margin: 8px 0;
+  }
+  
+  .floating-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .post-input input {
+    font-size: 14px;
+  }
+
+  .action-btn {
+    padding: 8px;
+  }
+
+  .followers-section {
+    width: 100%;
+  }
+
+  .offer-form {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .notification {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 5px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .search-bar {
+    padding: 8px;
+  }
+
+  .profile-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .product-image {
+    max-height: 150px;
+  }
+
+  .floating-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .post-input input {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .action-btn {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .followers-section {
+    padding: 15px;
+  }
+
+  .offer-form {
+    width: 90%;
+    max-width: 350px;
+  }
+}
+.product-card {
+  position: relative;
+  /* Other styles */
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.dropdown-btn {
+    background-color: #000; /* Black background */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #ffffff; /* White text color */
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content {
+  display: block;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: rgb(11, 30, 238);
+  border: 1px solid #ddd;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  color: #333;
+  border-radius: 5px;
+}
+
+.dropdown-content button {
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+
+.dropdown-content button:hover {
+  background-color: #0431fa;
+}
+.admin-link{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  /* background-color: #f3f3f3; */
+  color: black;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+.admin-link:hover {
+  background-color: rgb(218, 215, 215);
+}
+.admin-icon{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+/* In your MainPage.css or a separate loading.css file */
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f2f5;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.filter-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1;
+}
+
+

@@ -1,0 +1,16 @@
+.custom-arrow {
+  color: black !important; /* ทำให้ลูกศรเป็นสีดำ */
+  font-size: 24px !important; /* ขนาดใหญ่ขึ้น */
+  background: rgba(0, 0, 0, 0.3) !important; /* พื้นหลังดำจาง ๆ */
+  border-radius: 50%;
+  padding: 10px;
+  z-index: 10;
+}
+
+.custom-left {
+  left: -30px !important; /* ปรับตำแหน่งให้ชิดซ้าย */
+}
+
+.custom-right {
+  right: -30px !important; /* ปรับตำแหน่งให้ชิดขวา */
+}

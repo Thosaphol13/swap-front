@@ -1,0 +1,89 @@
+.product-detail-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow: hidden;
+}
+
+.modal-content h2 {
+  text-align: center;
+  color: #333;
+}
+
+.product-detail-image {
+  width: 100%;
+  height: auto;
+  margin: 20px 0;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.product-detail-info p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.product-detail-info p span {
+  font-weight: bold;
+  color: #333;
+}
+
+.product-detail-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.product-detail-actions button {
+  flex: 1;
+  margin: 0 5px;
+}
+
+.comments-section {
+  margin-top: 32px;
+}
+
+.comments-section h3 {
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.comment-textarea {
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 15px;
+  }
+
+  .product-detail-info p {
+    font-size: 14px;
+  }
+
+  .product-detail-actions {
+    flex-direction: column;
+  }
+
+  .product-detail-actions button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .comments-section h3 {
+    font-size: 18px;
+  }
+}

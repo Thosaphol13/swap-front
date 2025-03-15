@@ -1,0 +1,134 @@
+.profile-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.profile-header {
+  background-image: url('https://t4.ftcdn.net/jpg/06/06/87/63/360_F_606876358_NU2hCq3RP7xDpXG6PWnAMGGAun0fB5tW.jpg');
+  background-size: contain;
+  color: white;
+  padding: 60px 20px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.profile-picture-container {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20px;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-details h1,
+.profile-details h2 {
+  margin: 5px 0;
+}
+
+.profile-actions {
+  margin-top: 20px;
+}
+
+.profile-info {
+  background-color: #fff;
+  padding: 20px;
+  margin-top: -50px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-products-section {
+  margin-top: 40px;
+  text-align: center; /* Centering the section title */
+}
+
+.profile-products-section h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.profile-product-card {
+  display: inline-block;
+  width: 230px;
+  margin: 10px;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-product-card:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+.profile-product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.profile-product-info {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between; /* Ensuring product name aligns to the right */
+  align-items: center;
+}
+
+.profile-product-name {
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: right; /* Align product name to the right */
+}
+
+.profile-product-status {
+  padding: 5px 10px;
+  color: white;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.profile-product-status.green {
+  background-color: green;
+}
+
+.profile-product-status.red {
+  background-color: red;
+}
+
+.profile-product-status.blue {
+  background-color: blue;
+}
+.profile-reviews {
+  margin-top: 20px;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.review-card {
+  background: #f9f9f9;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  color: black; /* Set text color to black */
+}
+

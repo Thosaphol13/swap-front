@@ -1,0 +1,114 @@
+.product-form {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.product-form h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+.product-form .form-group {
+  margin-bottom: 15px;
+}
+
+.product-form .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.product-form .form-group input,
+.product-form .form-group textarea,
+.product-form .form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.product-form .form-group textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.product-form .form-group input[type="text"] {
+  height: 40px;
+}
+
+.product-form .form-group select {
+  height: 40px;
+}
+
+.product-form .form-actions {
+  display: flex;
+  justify-content: center; /* Align the buttons horizontally */
+  gap: 10px; /* Adds space between buttons */
+  margin-top: 10px;
+}
+
+.product-form .add-product-btn {
+  background-color: #007bff;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  border: none;
+  justify-content: center;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100px;
+  height: 40px;
+}
+
+.add-product-btn:hover {
+  background-color: #0056b3;
+}
+
+.close-btn1 {
+  background-color: #ff4d4d;
+  height: 40px;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100px;
+}
+
+.close-btn1:hover {
+  background-color: #cc0000;
+}
+
+.product-form .error-message {
+  margin-top: 15px;
+  color: #d9534f;
+  font-size: 16px;
+  text-align: center;
+}
+
+.product-form .success-message {
+  margin-top: 15px;
+  color: #5bc0de;
+  font-size: 16px;
+  text-align: center;
+}
+
+.product-form .form-group input[type="text"]::placeholder,
+.product-form .form-group textarea::placeholder {
+  color: #aaa;
+}
+
+.product-form .form-group select {
+  color: #555;
+}

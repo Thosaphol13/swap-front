@@ -1,0 +1,96 @@
+.sidebar {
+    width: 400px; /* Adjusted to match Facebook-like sidebar width */
+    background-color: #f0f2f5;
+    padding: 20px;
+    height: 100vh; /* Ensure it spans the full viewport height */
+    overflow-y: auto;
+    border-right: 1px solid #ddd;
+  }
+  
+  .profile-container1 {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+  }
+  
+  .profile-container1:hover {
+    background-color: #e4e6eb; /* Lighter gray to match Facebook hover effect */
+  }
+  
+  .profile-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-right: 12px;
+  }
+  
+  .profile-image1 {
+    width: 50px; /* Smaller profile image */
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .user-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .user-name {
+    font-size: 1.1em;
+    color: #1c1e21; /* Darker text for the name */
+    font-weight: 600;
+  }
+  
+  .user-role {
+    font-size: 0.9em;
+    color: #65676b; /* Lighter text for role */
+  }
+  
+  .admin-link {
+    display: flex;
+    align-items: center;
+    margin: 12px 0;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  
+  .admin-link:hover {
+    color: #1877f2; /* Facebook blue */
+  }
+  
+  .admin-icon {
+    margin-right: 8px;
+    font-size: 1em;
+  }
+  
+  .sidebar-nav {
+    margin-top: 30px;
+  }
+  
+  .nav-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  
+  .nav-item:hover {
+    color: #1877f2; /* Facebook blue */
+  }
+  
+  .nav-icon {
+    font-size: 1.3em; /* Slightly larger icons */
+    margin-right: 12px;
+  }
+  
+  .nav-text {
+    font-size: 1.1em; /* Slightly larger text */
+    color: #1c1e21; /* Darker color to match text style */
+    font-weight: 500;
+  }
+  

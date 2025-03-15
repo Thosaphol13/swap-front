@@ -1,0 +1,210 @@
+/* Main container for offer details */
+.offers-detail {
+  position: fixed;               /* Fix the modal in the center */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the modal */
+  width: 1200px;                  /* Fixed width */
+  height: 550px;                  /* Fixed height */
+  background-color: white;        /* White background */
+  border-radius: 10px;            /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  padding: 20px;                  /* Inner padding */
+  z-index: 1000;                  /* Ensure modal is above other elements */
+  overflow-y: auto;               /* Allow scrolling if content overflows */
+}
+
+/* Close button for the modal */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 40px;
+  color: #000;
+  cursor: pointer;
+  z-index: 1001;                  /* Ensure the button stays on top */
+}
+
+/* Individual offer card */
+.offer-card {
+  background-color: #f9f9f9;      /* Light gray background */
+  border-radius: 10px;            /* Rounded corners */
+  padding: 15px;
+  margin-bottom: 15px;            /* Spacing between cards */
+  display: flex;
+  justify-content: space-between; /* Space between elements */
+  align-items: center;
+  gap: 20px;
+  position: relative;             /* Avoid overlap with absolute elements */
+}
+
+/* Container for offer information (profile pic, product image, status) */
+.offer-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-grow: 1;                   /* Allow content to grow and fill space */
+}
+
+/* Styling for profile picture */
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;             /* Circle shape */
+  object-fit: cover;             /* Preserve aspect ratio */
+}
+
+/* Styling for the product image */
+.offer-product-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;              /* Crop image to fit */
+  border-radius: 10px;            /* Rounded corners */
+  position: relative;             /* Allow overlay of text */
+  margin-left: 60px;              /* Adjust position */
+  margin-right: 10px;
+}
+
+/* Actions container (Accept/Reject buttons) */
+.offer-actions {
+  display: flex;
+  gap: 15px;                      /* Space between action buttons */
+}
+
+/* Button styles (Accept and Reject) */
+.accept-btn, .reject-btn {
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;                /* Pointer on hover */
+}
+
+/* Green background for Accept button */
+.accept-btn {
+  background-color: green;
+  color: white;
+}
+
+/* Red background for Reject button */
+.reject-btn {
+  background-color: red;
+  color: white;
+}
+
+/* Offer status text */
+.offer-status {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+/* Styling for accepted, rejected, and pending statuses */
+.offer-status.accepted {
+  color: green;
+}
+
+.offer-status.rejected {
+  color: red;
+}
+
+.offer-status.pending {
+  color: orange;
+}
+
+/* Overlay for product price on the image */
+.offer-product-price, .product-price {
+  position: absolute;
+  top: 31%;
+  left: 38%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 10;
+}
+
+/* Price on product card (specific for .product-price) */
+.product-price {
+  left: 16%;
+}
+
+/* Button container for toggle actions */
+.offer-toggle-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* General button container for form actions */
+.button-container {
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+/* General button style */
+.btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+/* Hover effect for buttons */
+.btn:hover {
+  background-color: #0056b3;      /* Darker shade on hover */
+}
+
+/* Active state for buttons */
+.btn:active {
+  background-color: #003d80;      /* Even darker shade */
+}
+
+/* Special 'Complete' button for success */
+.btn-complete {
+  background-color: #4caf50;      /* Green background */
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hover effect for 'Complete' button */
+.btn-complete:hover {
+  background-color: #45a049;
+  transform: scale(1.05);           /* Slight zoom-in effect */
+}
+
+/* Active state for 'Complete' button */
+.btn-complete:active {
+  background-color: #3e8e41;       /* Even darker green */
+  transform: scale(1);              /* Reset zoom effect */
+}
+
+/* Disabled state for 'Complete' button */
+.btn-complete:disabled {
+  background-color: #cccccc;       /* Gray background */
+  color: #666666;                  /* Dimmed text color */
+  cursor: not-allowed;             /* Show not-allowed cursor */
+}
+
+/* Chat action container */
+.chat-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
