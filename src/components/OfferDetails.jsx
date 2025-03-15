@@ -40,7 +40,7 @@ const OffersDetail = ({ userId, productId, onClose }) => {
   const handleSubmit = async ( reportedUserId,product_id) => {
     try {
         const userId = id; 
-        const response = await axios.get(`https://swap-back-rh5j.onrender.com/reportUser/has-reported/${userId}/${reportedUserId}/${product_id}`);
+        const response = await axios.get(`http://localhost:3001/reportUser/has-reported/${userId}/${reportedUserId}/${product_id}`);
         if (response.data.hasReported) {
           Modal.warning({
             title: "คุณได้รีพอร์ตการแลกนี้ไปแล้ว!",
@@ -71,7 +71,7 @@ const OffersDetail = ({ userId, productId, onClose }) => {
         const userId = id; // ดึง userId จาก state หรือ context
     
         // ตรวจสอบว่าผู้ใช้รีวิวไปแล้วหรือยัง
-        const response = await axios.get(`https://swap-back-rh5j.onrender.com/reviews/has-reviewed/${userId}/${productId}`);
+        const response = await axios.get(`http://localhost:3001/reviews/has-reviewed/${userId}/${productId}`);
         if (response.data.hasReviewed) {
           Modal.warning({
             title: "คุณได้รีวิวการแลกนี้ไปแล้ว!",
@@ -81,7 +81,7 @@ const OffersDetail = ({ userId, productId, onClose }) => {
         }
     
         // ส่งรีวิวไปยัง backend
-        await axios.post("https://swap-back-rh5j.onrender.com/reviews", {
+        await axios.post("http://localhost:3001/reviews", {
           userFromId: userId, // ผู้ที่รีวิว
           userToId: user_toId, // ผู้ที่ถูกรีวิว
           content: reviewContent,
@@ -100,14 +100,14 @@ const OffersDetail = ({ userId, productId, onClose }) => {
   useEffect(() => {
     const fetchOffers = async () => {
       try {
-        const receivedResponse = await axios.get(`https://swap-back-rh5j.onrender.com/offers/receiver/${userId}`);
+        const receivedResponse = await axios.get(`http://localhost:3001/offers/receiver/${userId}`);
         setReceivedOffers(receivedResponse.data);
       } catch (error) {
         console.error('Error fetching received offers:', error);
       }
     
       try {
-        const sentResponse = await axios.get(`https://swap-back-rh5j.onrender.com/offers/sent/${userId}`);
+        const sentResponse = await axios.get(`http://localhost:3001/offers/sent/${userId}`);
         setSentOffers(sentResponse.data);
       } catch (error) {
         console.error('Error fetching sent offers:', error);
@@ -130,7 +130,7 @@ const OffersDetail = ({ userId, productId, onClose }) => {
       onOk: async () => {
         try {
           // Make API call to accept offer
-          await axios.post('https://swap-back-rh5j.onrender.com/offers/accept', { offerId });
+          await axios.post('http://localhost:3001/offers/accept', { offerId });
   
           // Update offers state
           setReceivedOffers((prevOffers) =>
@@ -164,7 +164,7 @@ const OffersDetail = ({ userId, productId, onClose }) => {
       cancelText: 'ไม่ใช่',
       onOk: async () => {
         try {
-          await axios.post('https://swap-back-rh5j.onrender.com/offers/reject', { offerId });
+          await axios.post('http://localhost:3001/offers/reject', { offerId });
           setReceivedOffers((prevOffers) =>
             prevOffers.map((offer) =>
               offer.id === offerId ? { ...offer, status: 'REJECTED' } : offer
@@ -184,7 +184,7 @@ const OffersDetail = ({ userId, productId, onClose }) => {
 
   const handleDeliveryTypeUpdate = async (offerId, deliveryType) => {
     try {
-      await axios.post(`https://swap-back-rh5j.onrender.com/offers/update-delivery-type`, {
+      await axios.post(`http://localhost:3001/offers/update-delivery-type`, {
         offerId,
         deliveryType,
       });
@@ -200,7 +200,7 @@ const OffersDetail = ({ userId, productId, onClose }) => {
 
   const handleMarkAsCompleted = async (productId) => {
     try {
-      const response = await fetch('https://swap-back-rh5j.onrender.com/products/complete', {
+      const response = await fetch('http://localhost:3001/products/complete', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

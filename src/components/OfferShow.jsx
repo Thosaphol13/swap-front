@@ -22,7 +22,7 @@ const OfferShow = () => {
             return;
           }
           try {
-            const response = await axios.get(`https://swap-back-rh5j.onrender.com/offers/${offerId}`);
+            const response = await axios.get(`http://localhost:3001/offers/${offerId}`);
             setOffers(response.data);
           } catch (error) {
             console.error('Error fetching offers:', error);

@@ -13,7 +13,7 @@ const ProductForm = ({ userId, onClose }) => {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const response = await axios.get('https://swap-back-rh5j.onrender.com/categories');
+                const response = await axios.get('http://localhost:3001/categories');
                 setCategories(response.data);
             } catch (error) {
                 console.error('Error fetching categories:', error);
@@ -40,7 +40,7 @@ const ProductForm = ({ userId, onClose }) => {
                     formData.append('files', file.originFileObj); // เพิ่มไฟล์ทั้งหมดใน FormData
                 });
     
-                const response = await axios.post('https://swap-back-rh5j.onrender.com/products/upload', formData, {
+                const response = await axios.post('http://localhost:3001/products/upload', formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data',
                     },
@@ -61,7 +61,7 @@ const ProductForm = ({ userId, onClose }) => {
     
             console.log('Data to submit:', dataToSubmit);
     
-            await axios.post('https://swap-back-rh5j.onrender.com/products/create', dataToSubmit);
+            await axios.post('http://localhost:3001/products/create', dataToSubmit);
             
             message.success('Product created successfully!');
             setFileList([]);
